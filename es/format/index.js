@@ -2,11 +2,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define("lake", [], factory);
+		define("clearlake", [], factory);
 	else if(typeof exports === 'object')
-		exports["lake"] = factory();
+		exports["clearlake"] = factory();
 	else
-		root["lake"] = factory();
+		root["clearlake"] = factory();
 })(window, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -170,8 +170,8 @@ var dateFormators = {
  * e   | 周（中文）    | 周e: 周一
  *
  * @return 返回格式化后的字符串
- * @example format(new Date("2016/01/01 00:00:00")) // "2016/01/01 00:00:00"
- * @example format(new Date("2016/01/01 00:00:00"), "yyyyMMdd") // "20160101"
+ * @example formatDate(new Date("2016/01/01 00:00:00")) // "2016/01/01 00:00:00"
+ * @example formatDate(new Date("2016/01/01 00:00:00"), "yyyyMMdd") // "20160101"
  * @see https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
  */
 function formatDate() {
@@ -230,6 +230,7 @@ function parse(value, format) {
 }
 /**
  * 创建当前日期对象的副本
+ * @param date 日期对象
  * @return 返回新日期对象
  * @example clone(new Date("2014/1/1")) // new Date("2014/1/1")
  */
@@ -238,6 +239,7 @@ function clone(date) {
 }
 /**
  * 计算日期添加指定年数后的新日期
+ * @param date 日期对象
  * @param value 要添加的年数。如果小于 0 则倒数
  * @return 返回新日期对象
  * @example addYear(new Date("2014/1/1"), 1) // new Date("2015/1/1")
@@ -249,6 +251,7 @@ function addYear(date, value) {
 }
 /**
  * 计算日期添加指定月数后的新日期
+ * @param date 日期对象
  * @param value 要添加的月数。如果小于 0 则倒数
  * @return 返回新日期对象
  * @example addMonth(new Date("2014/1/1"), 1) // new Date("2014/2/1")
@@ -263,6 +266,7 @@ function addMonth(date, value) {
 }
 /**
  * 计算日期添加指定周后的新日期
+ * @param date 日期对象
  * @param value 要添加的周数。如果小于 0 则倒数
  * @return 返回新日期对象
  * @example addWeek(new Date("2014/1/1"), 1) // new Date("2014/1/8")
@@ -272,6 +276,7 @@ function addWeek(date, value) {
 }
 /**
  * 计算日期添加指定天数后的新日期
+ * @param date 日期对象
  * @param value 要添加的天数。如果小于 0 则倒数
  * @return 返回新日期对象
  * @example addDay(new Date("2014/1/1"), 1) // new Date("2014/1/2")
@@ -281,6 +286,7 @@ function addDay(date, value) {
 }
 /**
  * 计算日期添加指定小时后的新日期
+ * @param date 日期对象
  * @param value 要添加的小时数。如果小于 0 则倒数
  * @return 返回新日期对象
  * @example addHours(new Date("2014/1/1"), 1) // new Date("2014/1/1 01:00:00")
@@ -290,6 +296,7 @@ function addHours(date, value) {
 }
 /**
  * 计算日期添加指定分数后的新日期
+ * @param date 日期对象
  * @param value 要添加的分钟数。如果小于 0 则倒数
  * @return 返回新日期对象
  * @example addMinutes(new Date("2014/1/1"), 1) // new Date("2014/1/1 00:01:00")
@@ -299,6 +306,7 @@ function addMinutes(date, value) {
 }
 /**
  * 计算日期添加指定秒后的新日期
+ * @param date 日期对象
  * @param value 要添加的秒数。如果小于 0 则倒数
  * @return 返回新日期对象
  * @example addSeconds(new Date("2014/1/1"), 1) // new Date("2014/1/1 00:00:01")
@@ -308,6 +316,7 @@ function addSeconds(date, value) {
 }
 /**
  * 计算日期添加指定毫秒后的新日期
+ * @param date 日期对象
  * @param value 要添加的毫秒数。如果小于 0 则倒数
  * @return 返回新日期对象
  * @example addMilliseconds(new Date("2014/1/1"), 1000) // new Date("2014/1/1 00:00:01")
@@ -317,6 +326,7 @@ function addMilliseconds(date, value) {
 }
 /**
  * 获取日期的日期部分
+ * @param date 日期对象
  * @return 返回新日期对象，其小时部分已被清零
  * @example toDay(new Date("2014/1/1 12:00:00")) // new Date("2014/1/1")
  */
@@ -349,6 +359,7 @@ function toLastDay(date) {
 }
 /**
  * 获取日期的时区部分
+ * @param date 日期对象
  * @return 返回时区部分
  * @example getTimezone(new Date("Fri Feb 17 2017 16:54:41 GMT+0800")) // "GMT"
  */

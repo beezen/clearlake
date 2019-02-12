@@ -1,6 +1,6 @@
 {
-  "name": "lake",
-  "version": "0.0.1",
+  "name": "clearlake",
+  "version": "0.0.2",
   "description": "工具函数集合",
   "scripts": {
     "start": "digo server",
@@ -14,10 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/beezenD/lake"
+    "url": "https://github.com/beezenD/clearlake"
   },
   "keywords": [
-    "lake",
+    "clearlake",
     "ts",
     "components",
     "library",
