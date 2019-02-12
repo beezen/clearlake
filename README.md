@@ -13,4 +13,4 @@ parse("2014-1-1") // new Date("2014/1/1")
 
 ## 参考手册
 
-[api文档](./site/index.html)
+[api文档](https://beezend.github.io/clearlake/site/index.html)
