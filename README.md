@@ -10,3 +10,7 @@ import { formatDate, parse } from 'clearlake'
 formatDate(new Date("2016/01/01 00:00:00"), "yyyyMMdd") // "20160101"
 parse("2014-1-1") // new Date("2014/1/1")
 ```
+
+## 参考手册
+
+[api文档](./site/index.html)
