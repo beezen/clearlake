@@ -1,0 +1,26 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "default",
+            "program": "${workspaceFolder}/components/sandBox/index.tsx"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "webpack",
+            "program": "${workspaceFolder}/scripts/webpack/webpack.test.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "digofile",
+            "program": "${workspaceFolder}/scripts/doc.js"
+        },
+    ]
+}

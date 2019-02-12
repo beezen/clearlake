@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "strictNullChecks": true,
+        "moduleResolution": "node",
+        "jsx": "preserve",
+        "noUnusedParameters": false,
+        "noUnusedLocals": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "target": "es2015",
+        "noImplicitAny": true,
+        "lib": [
+            "dom",
+            "es2015"
+        ],
+        "paths": {
+            "wdui": ["./components"],
+            "components/*": ["./components/*"]
+        }
+    },
+    "exclude": [
+        "@tpl",
+        "scripts",
+        "lib",
+        "node_modules",
+    ],
+    "compileOnSave": false
+}
