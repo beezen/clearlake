@@ -65,12 +65,37 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<h1 id="clearlake">clearlake</h1>
+				<p>[![NPM version][npm-image]][npm-url]
+					[![Downloads][downloads-image]][npm-url]
+					[![Build Status][travis-image]][travis-url]
+					[![Coveralls Status][coveralls-image]][coveralls-url]
+				[![Gitter chat][gitter-image]][gitter-url]</p>
 				<p>一个程序员必备的工具函数库。</p>
-				<h2 id="-">介绍</h2>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> { formatDate, parse } <span class="hljs-keyword">from</span> <span class="hljs-string">'clearlake'</span>
+				<h2 id="-">方法</h2>
+				<h3 id="-">时间格式化</h3>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> { formatDate, parse, addDay} <span class="hljs-keyword">from</span> <span class="hljs-string">'clearlake'</span>
 
+<span class="hljs-comment">// 格式化时间显示</span>
 formatDate(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">"2016/01/01 00:00:00"</span>), <span class="hljs-string">"yyyyMMdd"</span>) <span class="hljs-comment">// "20160101"</span>
-parse(<span class="hljs-string">"2014-1-1"</span>) <span class="hljs-comment">// new Date("2014/1/1")</span></code></pre>
+
+<span class="hljs-comment">// 解析字符串为日期对象</span>
+parse(<span class="hljs-string">"2014-1-1"</span>) <span class="hljs-comment">// new Date("2014/1/1")</span>
+
+<span class="hljs-comment">// 计算日期添加指定天数后的新日期</span>
+addDay(<span class="hljs-string">"2014/1/1"</span>,<span class="hljs-number">2</span>) <span class="hljs-comment">// new Date("2014/1/3")</span></code></pre>
+				<h3 id="-">查询字符串</h3>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> { getQuery, appendQuery, formatQuery} <span class="hljs-keyword">from</span> <span class="hljs-string">'clearlake'</span>
+
+<span class="hljs-comment">// 查询参数</span>
+getQuery(<span class="hljs-string">"foo"</span>, <span class="hljs-string">"index.html?foo=1"</span>) <span class="hljs-comment">// "1"</span>
+
+<span class="hljs-comment">// 添加参数</span>
+appendQuery(<span class="hljs-string">"index.html#/abc"</span>, <span class="hljs-string">"from=link"</span>) <span class="hljs-comment">// "index.html?from=link#/abc"</span>
+
+<span class="hljs-comment">// 格式化对象为查询字符串</span>
+formatQuery({ <span class="hljs-attr">a</span>: <span class="hljs-string">"2"</span>, <span class="hljs-attr">c</span>: <span class="hljs-string">"4"</span> }) <span class="hljs-comment">// "a=2&amp;c=4"</span></code></pre>
+				<h2 id="-">参考手册</h2>
+				<p><a href="https://beezend.github.io/clearlake/site/index.html">api文档</a></p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -108,6 +133,9 @@ parse(<span class="hljs-string">"2014-1-1"</span>) <span class="hljs-comment">//
 						<a href="globals.html#addyear" class="tsd-kind-icon">add<wbr>Year</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#appendquery" class="tsd-kind-icon">append<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#clone" class="tsd-kind-icon">clone</a>
 					</li>
 					<li class=" tsd-kind-function">
@@ -123,7 +151,13 @@ parse(<span class="hljs-string">"2014-1-1"</span>) <span class="hljs-comment">//
 						<a href="globals.html#formatdate" class="tsd-kind-icon">format<wbr>Date</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#formatquery" class="tsd-kind-icon">format<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#getdayinmonth" class="tsd-kind-icon">get<wbr>Day<wbr>InMonth</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getquery" class="tsd-kind-icon">get<wbr>Query</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#gettimezone" class="tsd-kind-icon">get<wbr>Timezone</a>
@@ -139,6 +173,12 @@ parse(<span class="hljs-string">"2014-1-1"</span>) <span class="hljs-comment">//
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#parse" class="tsd-kind-icon">parse</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#parsequery" class="tsd-kind-icon">parse<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#setquery" class="tsd-kind-icon">set<wbr>Query</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#today" class="tsd-kind-icon">to<wbr>Day</a>
