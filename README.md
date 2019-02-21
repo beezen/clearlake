@@ -2,9 +2,10 @@
 
 [![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Coveralls Status][coveralls-image]][coveralls-url]
-[![Gitter chat][gitter-image]][gitter-url]
+
+[npm-url]: https://www.npmjs.com/package/clearlake
+[npm-image]: https://img.shields.io/npm/v/clearlake.svg
+[downloads-image]: https://img.shields.io/npm/dm/clearlake.svg
 
 一个程序员必备的工具函数库。
 
@@ -40,6 +41,6 @@ appendQuery("index.html#/abc", "from=link") // "index.html?from=link#/abc"
 formatQuery({ a: "2", c: "4" }) // "a=2&c=4"
 ```
 
-## 参考手册
+## 了解更多
 
-[api文档](https://beezend.github.io/clearlake/site/index.html)
+- [Api 参考文档](https://beezend.github.io/clearlake/site/index.html)
