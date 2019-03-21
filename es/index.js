@@ -96,6 +96,133 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/device/index.tsx":
+/*!*************************************!*\
+  !*** ./components/device/index.tsx ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var userAgent = window.navigator.userAgent.toLowerCase();
+/**
+ * 判断设备类型
+ *
+ * 示例   | 结果 | 说明
+ * ----- | ------- | ---------
+ * device.ios()        |   true   | 是ios设备
+ * device.android()    |   true   | 是android设备
+ * device.weixin()     |   true   | 是微信环境
+ */
+var device = {};
+/**
+ * 判断字符串是否存在
+ * @return true | false
+ */
+function find(needle) {
+    needle = needle.toLowerCase();
+    return userAgent.indexOf(needle) !== -1;
+}
+;
+device.iphoneX = function () {
+    return device.iphone() && screen.height == 812 && screen.width == 375;
+};
+device.ios = device.iOS = function () {
+    return device.iphone() || device.ipod() || device.ipad();
+};
+device.iphone = function () {
+    return !device.windows() && find('iphone');
+};
+device.ipod = function () {
+    return find('ipod');
+};
+device.ipad = function () {
+    return find('ipad');
+};
+device.android = function () {
+    return !device.windows() && find('android');
+};
+device.androidPhone = function () {
+    return device.android() && find('mobile');
+};
+device.androidTablet = function () {
+    return device.android() && !find('mobile');
+};
+device.blackberry = function () {
+    return find('blackberry') || find('bb10') || find('rim');
+};
+device.blackberryPhone = function () {
+    return device.blackberry() && !find('tablet');
+};
+device.blackberryTablet = function () {
+    return device.blackberry() && find('tablet');
+};
+device.windows = function () {
+    return find('windows');
+};
+device.windowsPhone = function () {
+    return device.windows() && find('phone');
+};
+device.windowsTablet = function () {
+    return device.windows() && find('touch') && !device.windowsPhone();
+};
+device.fxos = function () {
+    return (find('(mobile;') || find('(tablet;')) && find('; rv:');
+};
+device.fxosPhone = function () {
+    return device.fxos() && find('mobile');
+};
+device.fxosTablet = function () {
+    return device.fxos() && find('tablet');
+};
+device.meego = function () {
+    return find('meego');
+};
+device.cordova = function () {
+    return window.cordova && location.protocol === 'file:';
+};
+device.nodeWebkit = function () {
+    return _typeof(window.process) === 'object';
+};
+device.mobile = function () {
+    return device.androidPhone() || device.iphone() || device.ipod() || device.windowsPhone() || device.blackberryPhone() || device.fxosPhone() || device.meego();
+};
+device.tablet = function () {
+    return device.ipad() || device.androidTablet() || device.blackberryTablet() || device.windowsTablet() || device.fxosTablet();
+};
+device.desktop = function () {
+    return !device.tablet() && !device.mobile();
+};
+device.television = function () {
+    var television = ['googletv', 'viera', 'smarttv', 'internet.tv', 'netcast', 'nettv', 'appletv', 'boxee', 'kylo', 'roku', 'dlnadoc', 'roku', 'pov_tv', 'hbbtv', 'ce-html'];
+    var i = 0;
+    while (i < television.length) {
+        if (find(television[i])) {
+            return true;
+        }
+        i++;
+    }
+    return false;
+};
+device.portrait = function () {
+    return window.innerHeight / window.innerWidth > 1;
+};
+device.landscape = function () {
+    return window.innerHeight / window.innerWidth < 1;
+};
+device.weixin = function () {
+    return find('micromessenger');
+};
+exports.device = device;
+
+/***/ }),
+
 /***/ "./components/format/index.tsx":
 /*!*************************************!*\
   !*** ./components/format/index.tsx ***!
@@ -505,6 +632,124 @@ Object.keys(_query).forEach(function (key) {
     }
   });
 });
+
+var _device = __webpack_require__(/*! ./device */ "./components/device/index.tsx");
+
+Object.keys(_device).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _device[key];
+    }
+  });
+});
+
+var _money = __webpack_require__(/*! ./money */ "./components/money/index.tsx");
+
+Object.keys(_money).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _money[key];
+    }
+  });
+});
+
+/***/ }),
+
+/***/ "./components/money/index.tsx":
+/*!************************************!*\
+  !*** ./components/money/index.tsx ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.formatMoney = formatMoney;
+exports.formatCurrencyToChinese = formatCurrencyToChinese;
+/**
+ * 特殊符号分割金额数字
+ * @param value 金额
+ * @param precision 精度
+ * @param separator 分隔符。
+ * @example
+ formatMoney("12345.12345", 2) // 12,345.12
+ formatMoney("12345.12345", 0) // 12,345
+ formatMoney("12345", 2,"@") // 12@345.00
+ */
+function formatMoney(value) {
+    var precision = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
+    var separator = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : ",";
+
+    if (value) {
+        var strNum = value.toString();
+        var match = strNum.match(/^(\d+)(\.\d+)?$/);
+        if (match) {
+            var integer = match[1];
+            var fraction = match[2] ? match[2] : "";
+            if (precision != 0) {
+                if (fraction.indexOf('.') > -1) {
+                    fraction = fraction.slice(1);
+                }
+                var fractionStr = [];
+                for (var i = 0; i < precision; i++) {
+                    fractionStr.push(fraction[i] ? fraction[i] : '0');
+                }
+                fraction = '.' + fractionStr.join("");
+            } else {
+                fraction = "";
+            }
+            if (integer.length > 3) {
+                var source = integer.split('');
+                var target = [];
+                for (var _i = 0; _i < source.length; _i++) {
+                    var index = source.length - 1 - _i;
+                    var item = source[index];
+                    target.push(item);
+                    if ((_i + 1) % 3 == 0 && _i != source.length - 1) {
+                        target.push(separator);
+                    }
+                }
+                integer = target.reverse().join('');
+                return integer + fraction;
+            }
+        }
+    }
+    return value;
+}
+;
+/**
+ * 格式化货币为中文大写格式（如壹佰贰拾元）。
+ * @param value 要格式化的货币值。最大不能超过 9 亿。
+ * @return 返回格式化后的字符串。
+ * @example formatCurrencyToChinese(10000000) // "壹仟万元"
+ */
+function formatCurrencyToChinese(value) {
+    var digits = "零壹贰叁肆伍陆柒捌玖";
+    var units0 = "元万亿";
+    var units1 = ["", "拾", "佰", "仟"];
+    var neg = value < 0;
+    if (neg) value = -value;
+    if (value < 0.005) return "零元";
+    var t = Math.round(value * 100) % 100;
+    var s = t ? (t >= 10 ? digits.charAt(Math.floor(t / 10)) + "角" : "") + (t % 10 ? digits.charAt(t % 10) + "分" : "") : "";
+    t = Math.floor(value);
+    for (var i = 0; i < units0.length && t > 0; i++) {
+        var p = "";
+        for (var j = 0; j < units1.length && t > 0; j++) {
+            p = digits.charAt(t % 10) + units1[j] + p;
+            t = Math.floor(t / 10);
+        }
+        s = (p.replace(/(零.)*零$/, "") || "零") + units0.charAt(i) + s;
+    }
+    return (neg ? "负" : "") + s.replace(/(零.)*零元/, "元").replace(/(零.)+/g, "零");
+}
+;
 
 /***/ }),
 

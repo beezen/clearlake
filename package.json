@@ -1,6 +1,6 @@
 {
   "name": "clearlake",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "工具函数集合",
   "scripts": {
     "start": "digo server",
@@ -31,6 +31,7 @@
     "es",
     "components"
   ],
+  "homepage": "https://beezend.github.io/clearlake/",
   "main": "lib/index.js",
   "types": "components/index.tsx",
   "author": "beezenD",

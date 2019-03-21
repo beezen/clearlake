@@ -7,7 +7,7 @@
 [npm-image]: https://img.shields.io/npm/v/clearlake.svg
 [downloads-image]: https://img.shields.io/npm/dm/clearlake.svg
 
-一个程序员必备的工具函数库。
+一个程序员必备的工具函数库,包含了日期格式化，网址格式化，字符串格式化，金额格式化等许多常用功能。
 
 ## 方法
 
@@ -39,6 +39,21 @@ appendQuery("index.html#/abc", "from=link") // "index.html?from=link#/abc"
 
 // 格式化对象为查询字符串
 formatQuery({ a: "2", c: "4" }) // "a=2&c=4"
+```
+
+### 金额格式化
+
+```js
+import { formatMoney, formatCurrencyToChinese } from 'clearlake'
+
+// 金额格式化
+formatMoney("12345.12345", 2) // 12,345.12
+formatMoney("12345.12345", 0) // 12,345
+formatMoney("12345", 2,"@") // 12@345.00
+
+// 金额转中文
+formatCurrencyToChinese(10000000) // "壹仟万元"
+
 ```
 
 ## 了解更多

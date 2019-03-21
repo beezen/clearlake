@@ -67,6 +67,19 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-is-not-exported"><a href="interfaces/devicetype.html" class="tsd-kind-icon">Device<wbr>Type</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#device" class="tsd-kind-icon">device</a></li>
+								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#useragent" class="tsd-kind-icon">user<wbr>Agent</a></li>
+							</ul>
+						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
@@ -83,7 +96,10 @@
 								<li class="tsd-kind-function"><a href="globals.html#compareday" class="tsd-kind-icon">compare<wbr>Day</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#compareyear" class="tsd-kind-icon">compare<wbr>Year</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#dayleft" class="tsd-kind-icon">day<wbr>Left</a></li>
+								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#find" class="tsd-kind-icon">find</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#formatcurrencytochinese" class="tsd-kind-icon">format<wbr>Currency<wbr>ToChinese</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#formatdate" class="tsd-kind-icon">format<wbr>Date</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#formatmoney" class="tsd-kind-icon">format<wbr>Money</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#formatquery" class="tsd-kind-icon">format<wbr>Query</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#getdayinmonth" class="tsd-kind-icon">get<wbr>Day<wbr>InMonth</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#getquery" class="tsd-kind-icon">get<wbr>Query</a></li>
@@ -108,6 +124,58 @@
 					</div>
 				</section>
 			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+					<a name="device" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagLet">Let</span> device</h3>
+					<div class="tsd-signature tsd-kind-icon">device<span class="tsd-signature-symbol">:</span> <a href="interfaces/devicetype.html" class="tsd-signature-type">DeviceType</a><span class="tsd-signature-symbol"> =&nbsp;{} as DeviceType</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in device/index.tsx:12</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>判断设备类型</p>
+						</div>
+						<table>
+							<thead>
+								<tr>
+									<th>示例</th>
+									<th>结果</th>
+									<th>说明</th>
+								</tr>
+							</thead>
+							<tbody><tr>
+									<td>device.ios()</td>
+									<td>true</td>
+									<td>是ios设备</td>
+								</tr>
+								<tr>
+									<td>device.android()</td>
+									<td>true</td>
+									<td>是android设备</td>
+								</tr>
+								<tr>
+									<td>device.weixin()</td>
+									<td>true</td>
+									<td>是微信环境</td>
+								</tr>
+						</tbody></table>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+					<a name="useragent" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> user<wbr>Agent</h3>
+					<div class="tsd-signature tsd-kind-icon">user<wbr>Agent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;window.navigator.userAgent.toLowerCase()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in device/index.tsx:1</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function">
@@ -120,7 +188,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L146">format/index.tsx:146</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L146">format/index.tsx:146</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -163,7 +231,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L157">format/index.tsx:157</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L157">format/index.tsx:157</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -206,7 +274,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L190">format/index.tsx:190</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L190">format/index.tsx:190</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -249,7 +317,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L168">format/index.tsx:168</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L168">format/index.tsx:168</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -292,7 +360,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L119">format/index.tsx:119</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L119">format/index.tsx:119</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -335,7 +403,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L179">format/index.tsx:179</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L179">format/index.tsx:179</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -378,7 +446,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L135">format/index.tsx:135</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L135">format/index.tsx:135</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -421,7 +489,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L106">format/index.tsx:106</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L106">format/index.tsx:106</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -464,7 +532,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/query/index.tsx#L109">query/index.tsx:109</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/query/index.tsx#L109">query/index.tsx:109</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -507,7 +575,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L95">format/index.tsx:95</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L95">format/index.tsx:95</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -544,7 +612,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L274">format/index.tsx:274</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L274">format/index.tsx:274</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -587,7 +655,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L261">format/index.tsx:261</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L261">format/index.tsx:261</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -630,7 +698,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L289">format/index.tsx:289</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L289">format/index.tsx:289</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -678,6 +746,72 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
+					<a name="find" class="tsd-anchor"></a>
+					<h3>find</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">find<span class="tsd-signature-symbol">(</span>needle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in device/index.tsx:48</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>判断字符串是否存在</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>needle: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>true | false</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="formatcurrencytochinese" class="tsd-anchor"></a>
+					<h3>format<wbr>Currency<wbr>ToChinese</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">format<wbr>Currency<wbr>ToChinese<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in money/index.tsx:56</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>格式化货币为中文大写格式（如壹佰贰拾元）。</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>formatCurrencyToChinese(10000000) // &quot;壹仟万元&quot;</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>要格式化的货币值。最大不能超过 9 亿。</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>返回格式化后的字符串。</p>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="formatdate" class="tsd-anchor"></a>
 					<h3>format<wbr>Date</h3>
@@ -688,7 +822,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L35">format/index.tsx:35</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L35">format/index.tsx:35</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -772,6 +906,59 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="formatmoney" class="tsd-anchor"></a>
+					<h3>format<wbr>Money</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">format<wbr>Money<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, precision<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, separator<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in money/index.tsx:11</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>特殊符号分割金额数字</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>formatMoney(&quot;12345.12345&quot;, 2) // 12,345.12
+											formatMoney(&quot;12345.12345&quot;, 0) // 12,345
+										formatMoney(&quot;12345&quot;, 2,&quot;@&quot;) // <a href="mailto:12@345.00">12@345.00</a></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>金额</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> precision: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;2</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>精度</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> separator: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;,&quot;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>分隔符。</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">number</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="formatquery" class="tsd-anchor"></a>
 					<h3>format<wbr>Query</h3>
 					<ul class="tsd-signatures tsd-kind-function">
@@ -781,7 +968,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/query/index.tsx#L38">query/index.tsx:38</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/query/index.tsx#L38">query/index.tsx:38</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -833,7 +1020,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L338">format/index.tsx:338</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L338">format/index.tsx:338</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -882,7 +1069,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/query/index.tsx#L61">query/index.tsx:61</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/query/index.tsx#L61">query/index.tsx:61</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -931,7 +1118,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L236">format/index.tsx:236</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L236">format/index.tsx:236</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -968,7 +1155,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L250">format/index.tsx:250</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L250">format/index.tsx:250</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1014,7 +1201,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L325">format/index.tsx:325</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L325">format/index.tsx:325</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1060,7 +1247,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L311">format/index.tsx:311</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L311">format/index.tsx:311</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1136,7 +1323,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L69">format/index.tsx:69</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L69">format/index.tsx:69</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1224,7 +1411,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/query/index.tsx#L9">query/index.tsx:9</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/query/index.tsx#L9">query/index.tsx:9</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1278,7 +1465,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/query/index.tsx#L82">query/index.tsx:82</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/query/index.tsx#L82">query/index.tsx:82</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1333,7 +1520,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L200">format/index.tsx:200</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L200">format/index.tsx:200</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1370,7 +1557,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L210">format/index.tsx:210</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L210">format/index.tsx:210</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1407,7 +1594,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L222">format/index.tsx:222</a></li>
+									<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L222">format/index.tsx:222</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1443,7 +1630,7 @@
 					<div class="tsd-signature tsd-kind-icon">date<wbr>Formators<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L1">format/index.tsx:1</a></li>
+							<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L1">format/index.tsx:1</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -1452,7 +1639,7 @@
 						<div class="tsd-signature tsd-kind-icon">__proto__<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L2">format/index.tsx:2</a></li>
+								<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L2">format/index.tsx:2</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1466,7 +1653,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L9">format/index.tsx:9</a></li>
+										<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L9">format/index.tsx:9</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1489,7 +1676,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L7">format/index.tsx:7</a></li>
+										<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L7">format/index.tsx:7</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1512,7 +1699,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L8">format/index.tsx:8</a></li>
+										<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L8">format/index.tsx:8</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1535,7 +1722,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L12">format/index.tsx:12</a></li>
+										<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L12">format/index.tsx:12</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1558,7 +1745,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L10">format/index.tsx:10</a></li>
+										<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L10">format/index.tsx:10</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1581,7 +1768,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L11">format/index.tsx:11</a></li>
+										<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L11">format/index.tsx:11</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1604,7 +1791,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/beezenD/lake/blob/2fa6e48/components/format/index.tsx#L3">format/index.tsx:3</a></li>
+										<li>Defined in <a href="https://github.com/beezenD/lake/blob/3505696/components/format/index.tsx#L3">format/index.tsx:3</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1633,6 +1820,15 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="interfaces/devicetype.html" class="tsd-kind-icon">Device<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="globals.html#device" class="tsd-kind-icon">device</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="globals.html#useragent" class="tsd-kind-icon">user<wbr>Agent</a>
+					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#addday" class="tsd-kind-icon">add<wbr>Day</a>
 					</li>
@@ -1672,8 +1868,17 @@
 					<li class=" tsd-kind-function">
 						<a href="globals.html#dayleft" class="tsd-kind-icon">day<wbr>Left</a>
 					</li>
+					<li class=" tsd-kind-function tsd-is-not-exported">
+						<a href="globals.html#find" class="tsd-kind-icon">find</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#formatcurrencytochinese" class="tsd-kind-icon">format<wbr>Currency<wbr>ToChinese</a>
+					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#formatdate" class="tsd-kind-icon">format<wbr>Date</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#formatmoney" class="tsd-kind-icon">format<wbr>Money</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#formatquery" class="tsd-kind-icon">format<wbr>Query</a>
