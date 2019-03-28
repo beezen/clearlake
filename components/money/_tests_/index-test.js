@@ -2,6 +2,7 @@ import { formatMoney, formatCurrencyToChinese } from "../index";
 
 QUnit.test("formatMoney", function (assert) {
     assert.ok(formatMoney("12345", 2) == "12,345.00")
+    assert.ok(formatMoney("0") == "0.00")
     assert.ok(formatMoney("12345.12345", 2) == "12,345.12")
     assert.ok(formatMoney("12345.12345", 0) == "12,345")
     assert.ok(formatMoney("12345.12345", 0, '@') == "12@345")

@@ -27,21 +27,19 @@ export function formatMoney(value: number | string, precision = 2, separator = "
             } else {
                 fraction = "";
             }
-            if (integer.length > 3) {
-                let source = integer.split('');
-                let target = [];
-                for (let i = 0; i < source.length; i++) {
-                    let index = (source.length - 1) - i;
-                    let item = source[index];
+            let source = integer.split('');
+            let target = [];
+            for (let i = 0; i < source.length; i++) {
+                let index = (source.length - 1) - i;
+                let item = source[index];
 
-                    target.push(item);
-                    if (((i + 1) % 3) == 0 && i != (source.length - 1)) {
-                        target.push(separator);
-                    }
+                target.push(item);
+                if (((i + 1) % 3) == 0 && i != (source.length - 1)) {
+                    target.push(separator);
                 }
-                integer = target.reverse().join('');
-                return integer + fraction;
             }
+            integer = target.reverse().join('');
+            return integer + fraction;
         }
     }
     return value;

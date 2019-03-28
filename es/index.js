@@ -704,20 +704,18 @@ function formatMoney(value) {
             } else {
                 fraction = "";
             }
-            if (integer.length > 3) {
-                var source = integer.split('');
-                var target = [];
-                for (var _i = 0; _i < source.length; _i++) {
-                    var index = source.length - 1 - _i;
-                    var item = source[index];
-                    target.push(item);
-                    if ((_i + 1) % 3 == 0 && _i != source.length - 1) {
-                        target.push(separator);
-                    }
+            var source = integer.split('');
+            var target = [];
+            for (var _i = 0; _i < source.length; _i++) {
+                var index = source.length - 1 - _i;
+                var item = source[index];
+                target.push(item);
+                if ((_i + 1) % 3 == 0 && _i != source.length - 1) {
+                    target.push(separator);
                 }
-                integer = target.reverse().join('');
-                return integer + fraction;
             }
+            integer = target.reverse().join('');
+            return integer + fraction;
         }
     }
     return value;
