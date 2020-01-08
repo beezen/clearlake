@@ -657,6 +657,18 @@ Object.keys(_money).forEach(function (key) {
   });
 });
 
+var _path = __webpack_require__(/*! ./path */ "./components/path/index.tsx");
+
+Object.keys(_path).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _path[key];
+    }
+  });
+});
+
 /***/ }),
 
 /***/ "./components/money/index.tsx":
@@ -748,6 +760,135 @@ function formatCurrencyToChinese(value) {
     return (neg ? "负" : "") + s.replace(/(零.)*零元/, "元").replace(/(零.)+/g, "零");
 }
 ;
+
+/***/ }),
+
+/***/ "./components/path/index.tsx":
+/*!***********************************!*\
+  !*** ./components/path/index.tsx ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+exports.__esModule = true;
+exports.isAbsolute = isAbsolute;
+exports.getDir = getDir;
+exports.getExt = getExt;
+exports.normalize = normalize;
+exports.join = join;
+exports.commonDir = commonDir;
+exports.relativePath = relativePath;
+/**
+ * 判断路径是否是绝对路径
+ * @param path 路径
+ * @return 布尔值
+ */
+function isAbsolute(path) {
+    if (process.platform == "win32") {
+        return (/^(\w\:|\\|\/)/i.test(path)
+        );
+    } else {
+        return path[0] == '/';
+    }
+}
+/**
+ * 获取路径所在的文件夹路径
+ * @param path 路径
+ * @return 文件夹路径
+ */
+function getDir(path) {
+    var p = path.match(/.*\//);
+    return p ? p[0].replace(/\/$/, "") : "";
+}
+/**
+ * 获取路径中的扩展名
+ * @param path 路径
+ */
+function getExt(path) {
+    var ext = path.match(/\w\.\w*$/);
+    return ext ? ext[0].slice(1) : "";
+}
+/**
+ * 格式化路径，去除路径多余的 /、./、../
+ */
+function normalize(path) {
+    var p = path.split("/");
+    var result = [];
+    for (var i = 0; i < p.length; i++) {
+        if (p[i] == '.') {} else if (p[i] == '..') {
+            if (result.length != 0 && result[result.length - 1] != '..') {
+                result.pop();
+            } else {
+                result.push('..');
+            }
+        } else if (p[i] != "") {
+            result.push(p[i]);
+        }
+    }
+    return result.join("/");
+}
+/**
+ * 拼接两个路径
+ * @param path1
+ * @param path2
+ */
+function join(path1, path2) {
+    return normalize(normalize(path1) + "/" + normalize(path2)) + (path2[path2.length - 1] == "/" ? "/" : "");
+}
+/**
+ * 计算两个路径的公共文件夹
+ * @param path1
+ * @param path2
+ */
+function commonDir(path1, path2) {
+    var p1 = normalize(path1).split("/");
+    var p2 = normalize(path2).split("/");
+    var result = [];
+    for (var i = 0; i < p1.length; i++) {
+        if (p1[i] == p2[i]) {
+            result.push(p1[i]);
+        } else {
+            if (result.length == 0) {
+                return null;
+            } else {
+                return result.join("/");
+            }
+        }
+    }
+    return result.join("/");
+}
+/**
+ * 计算 path2 相对于 path1 的相对路径
+ * @param path1
+ * @param path2
+ */
+function relativePath(path1, path2) {
+    var p1 = normalize(path1) + (path1[path1.length - 1] == "/" ? "/" : "");
+    var p2 = normalize(path2) + (path2[path2.length - 1] == "/" ? "/" : "");
+    var com = commonDir(p1, p2) || "";
+    var left1 = p1.slice(com.length).split("/");
+    var left2 = p2.slice(com.length).split("/");
+    var result = [];
+    if (left1.length == 1) {
+        result.push(com.split("/")[com.split("/").length - 1]);
+    } else {
+        for (var i = 0; i < left1.length; i++) {
+            if (left1[i] != "" && (left2[i] == "" || left2[i] === undefined)) {
+                result.push("..");
+            }
+        }
+    }
+    for (var _i = 0; _i < left2.length; _i++) {
+        if (left2[_i] != "") {
+            result.push(left2[_i]);
+        }
+    }
+    return result.join("/");
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/.0.11.10@process/browser.js */ "./node_modules/.0.11.10@process/browser.js")))
 
 /***/ }),
 
@@ -914,6 +1055,201 @@ function appendQuery(url, query) {
 
     return (query != null ? urlRef + (urlRef.indexOf("?") >= 0 ? "&" : "?") + query : urlRef) + (hash ? "#" + hash : '');
 }
+
+/***/ }),
+
+/***/ "./node_modules/.0.11.10@process/browser.js":
+/*!**************************************************!*\
+  !*** ./node_modules/.0.11.10@process/browser.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
 
 /***/ })
 
